@@ -1,7 +1,7 @@
 import streamlit as st
 import numpy as np
 from PIL import Image
-import tf_keras as tf
+import tensorflow as tf
 
 @st.cache_resource
 def load_model():
