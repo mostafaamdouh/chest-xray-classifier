@@ -2,10 +2,13 @@ import streamlit as st
 import numpy as np
 from PIL import Image
 import tensorflow as tf
+import joblib
 
 @st.cache_resource
 def load_model():
-    model = tf.keras.models.load_model('xray_model.keras')
+    data = joblib.load('xray_model.joblib')
+    model = tf.keras.models.model_from_json(data['config'])
+    model.set_weights(data['weights'])
     return model
 
 model = load_model()
