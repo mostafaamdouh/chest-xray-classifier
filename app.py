@@ -3,11 +3,6 @@ import numpy as np
 from PIL import Image
 import tf_keras as tf
 
-streamlit==1.32.0
-tensorflow-cpu==2.15.0
-numpy==1.26.4
-Pillow==10.2.0
-
 @st.cache_resource
 def load_model():
     model = tf.keras.models.load_model('xray_model.keras')
